@@ -7,7 +7,7 @@ function Home() {
   const [loading, setLoading] = useState(true); // Добавляем состояние для отслеживания загрузки
   const [vis, setvis] = useState(false);
 
-
+console.log(123576888888888888888888888888888888884351628342134343434343434134134134134134134134134134134134134131431431434131434134134134134134134134134131431434134134134134134134134)
   useEffect(() => {
     
     fetch("https://644ab0e4a8370fb32155be44.mockapi.io/item")
