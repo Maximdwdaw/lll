@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-export function Post({ text, data, fulltext, img }) {
+export function Post({ colort ,text, data, fulltext, img }) {
 
 
   function opend() {
-    localStorage.data = JSON.stringify({text:text,data:data,fulltext:fulltext,img:img})
+    localStorage.data = JSON.stringify({text:text,data:data,fulltext:fulltext,img:img,color:colort})
    window.location.href = '/full'
     
   }
@@ -15,8 +15,6 @@ let startX;
 function handleTouchStart(event) {
   startX = event.touches[0].clientX;
 }
-
-
 
 function handleTouchEnd(event) {
   const endX = event.changedTouches[0].clientX;
@@ -30,7 +28,6 @@ function handleTouchEnd(event) {
   startX = null;
 }
 
-
   return (
     <>
 
@@ -40,7 +37,7 @@ function handleTouchEnd(event) {
              
              className="Post">
         <img className="Post-img" src={img} alt="Post" />
-        <p className="Post-text">{text}</p>
+        <p style={{ color: colort }} className="Post-text">{text}</p>
         <p className="Post-data">{data}</p>
       </div>
       

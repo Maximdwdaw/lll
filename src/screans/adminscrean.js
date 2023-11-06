@@ -12,6 +12,8 @@ function Admin() {
   const fileInputRef = useRef(null);
   const [ddaw, setd] = useState("../img/photp.png");
   const imageListRef = ref(storage, "images/");
+  let color;
+
 
   function formatTime(date) {
     const hours = String(date.getHours()).padStart(2, "0");
@@ -35,13 +37,16 @@ function Admin() {
         getDownloadURL(imageRef).then(async (url) => {
           const currentTime = new Date();
           const formattedTime = formatTime(currentTime);
+          w()
+    
           let daw = {
               text: placeholder,
               data: formattedTime,
               fulltext: fulltext,
-              img: url
+              colortext: color,
+              img: url,
+              
             }
-
           try { 
             
             const response = await fetch("https://644ab0e4a8370fb32155be44.mockapi.io/item", {
@@ -97,6 +102,12 @@ function Admin() {
 
   const handleInputChange2 = (event) => {
     setplaceholder(event.target.value);
+    
+    document.getElementById("plas").style.color = color;
+  };
+  function w(event) {
+    color = document.getElementById("colortex").value
+    console.log(color)
   };
 
   return (
@@ -108,9 +119,15 @@ function Admin() {
         className="g1"
         onChange={handleInputChange1}
       />
-
+      <input
+        type="color"
+        id="colortex"
+        value={color}
+        onChange={w}
+        />
       <input
         type="text"
+        id="plas"
         className="g2"
         placeholder="Ведіть заголовок"
         value={placeholder}

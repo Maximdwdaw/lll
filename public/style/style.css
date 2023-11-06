@@ -65,8 +65,24 @@
   }
 
 
+#version {
+    position: fixed;
+    left: 50%;
+    bottom: -15%;
+    transform: translate(-50%);
+    font-size: 30px;
+    background-color: rgb(162, 203, 255);
+    border-radius: 20px;
+    transition: transform 0.3s ease; 
+}
 
-
+#w1 {
+    transition: transform 0.3s ease; 
+}
+#w2 {
+    transition: transform 0.3s ease; 
+}
+    
 #place {
     position: absolute;
     top: 30%;
@@ -166,8 +182,8 @@ font-size: 30px;
     left: 50%;
     transform: translate(-50%);
     top: 230px;
-    width: 376px; 
-    height: 346px;
+    width: 90%; 
+    height: 40%;
     font-size: 20px;
     border-radius: 20px;
     border: 2px;
@@ -183,7 +199,7 @@ font-size: 30px;
     transform: translate(-50%);
     top: 100px;
     width: 50%;
-    height: 50px;
+    height: 5%;
     font-size: 20px;
     text-align: center;
     border-radius: 20px;
@@ -192,17 +208,16 @@ font-size: 30px;
 
 .inputphoto {
     position: fixed;
-    left: 35%;
-    transform: translate(-35%);
-    bottom: 10px;
+    left: 2%;
+    bottom: 1%;
     border-radius: 15px;
     font-size: 20px;
-    width: 200px;
+    width: 50%;
     border: 2px;
     border-style: solid;
     border-color: black;
-    height: 100px;
-
+    height: 10%;
+    overflow: hidden;
 }
 
 .g1::placeholder {
@@ -211,13 +226,24 @@ font-size: 30px;
     transform: translate(-50%);
     word-wrap: break-word; 
 }
-
-.upload {
+#colortex {
     position: fixed;
-    bottom: 10px;
-    width: 100px;
-    height: 100px;
-    right: 20px;
+    left: 50%;
+    top: 8%;
+    border-radius: 10px;
+    border-color: black;
+    transform: translate(-50%);
+    width: 50%;
+
+}
+.upload {
+
+     overflow: hidden;
+    position: fixed;
+    bottom: 1%;
+    width: 20%;
+    height: 10%;
+    right: 2%;
     border-radius: 25px;
     font-size: 30px;
     font-family: "Exo 2";

@@ -47,7 +47,7 @@ function view() {
   return (
     <>
 {localStorage.data && <>
-        <h1 id='place'>{data.text}</h1>
+        <h1 style={{color:data.color}} id='place'>{data.text}</h1>
         <h2 id='placedata'>{data.data}</h2>
         <p id='place-text'>{data.fulltext}</p>
         <img onClick={view} id='b1' src={data.img} alt="Post" />

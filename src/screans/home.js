@@ -20,26 +20,29 @@ function Home() {
       });
   }, []);
 
-  let startX;
+  let startY;
 
 
   function handleTouchStart(event) {
-    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
   }
   
   
   function handleTouchEnd(event) {
-    const endX = event.changedTouches[0].clientX;
-    const deltaX = endX - startX;
+    const endY = event.changedTouches[0].clientY;
+    const deltaY = endY - startY;
   
-    if (deltaX < -200) { // Если свайп был справа налево
-      const element = document.getElementById("g");
-      element.style.transform = "translateX(-100%)";
-      element.style.transition = "transform 0.3s"; // Добавляем анимацию
-      console.log('Сделан жест справа налево');
-    }
-  
-    startX = null;
+if (deltaY < -200) {
+  document.getElementById("w1").style.transform = "translate(0%,-100%)"
+  document.getElementById("w2").style.transform = "translate(0%,-100%)"
+  document.getElementById("version").style.transform = "translate(-50%,-600%)"
+}
+else {
+  document.getElementById("w1").style.transform = "translate(0%,0%)"
+  document.getElementById("w2").style.transform = "translate(0%,0%)"
+  document.getElementById("version").style.transform = "translate(-50%,0%)"
+}
+    startY = null;
   }
   
   return (
@@ -62,14 +65,14 @@ function Home() {
    
         // Иначе, отображаем данные
         d.map((data, index) => (
-          <div  key={index} onTouchStart={(event) => handleTouchStart(event)} onTouchEnd={(event) => handleTouchEnd(event)}><Post f={index} key={index} img={data.img} fulltext={data.fulltext} text={data.text} data={data.data} /></div>
+            <Post key={index} colort={data.colortext} img={data.img} fulltext={data.fulltext} text={data.text} data={data.data} />
         ))
         
               )}
 
-    <img onClick={()=>{window.location.href = 'adm'}} className="addpost" src="../img/add.png"/>
-    <img onClick={()=>{window.location.href = 'settings'}} className="settings" src="../img/settings.png"/>
-     <p style={{"position":"fixed","bottom":"0%","left":"45%","fontSize":"20px"}}>1.0.1v</p>
+    <img id="w1" onTouchStart={(event) => handleTouchStart(event)}  onTouchEnd={(event) => handleTouchEnd(event)} onClick={()=>{window.location.href = 'adm'}} className="addpost" src="../img/add.png"/>
+    <img id="w2" onTouchStart={(event) => handleTouchStart(event)} onTouchEnd={(event) => handleTouchEnd(event)} onClick={()=>{window.location.href = 'settings'}} className="settings" src="../img/settings.png"/>
+     <p id="version">1.0.2v</p>
      {vis && <>
       <h1 className="plas">Нема постів :(</h1>
         </>}
