@@ -63,9 +63,13 @@
   .entrys {
     animation: dwaf 0.5s ease forwards;
   }
+
+
+
+
 #place {
     position: absolute;
-    top: 22%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%);
     font-size: 30px;
@@ -76,7 +80,7 @@
 }
 #placedata {
     position: absolute;
-    top: 28%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%);
     font-size: 15px;
@@ -86,7 +90,7 @@
 }
 #place-text {
     position: absolute;
-    top: 250px;
+    top: 40%;
     left: 5px;
     font-size: 25px;
     

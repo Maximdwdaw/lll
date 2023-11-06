@@ -48,7 +48,6 @@ function add(obj) {
         }
     });
 }
-console.log(2631972356157555555757575757575757575757575757575757575)
 
 async function get() {
     return new Promise((resolve, reject) => {
