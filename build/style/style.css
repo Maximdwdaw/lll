@@ -42,8 +42,8 @@
         height: 200px;
     }
     100% {
-        width: 90%;
-        height: 90%;
+        width: 95%;
+        height: 98%;
     }
 }
 @keyframes dwaf {
@@ -84,7 +84,7 @@
 }
     
 #place {
-    position: absolute;
+    position: fixed;
     top: 30%;
     left: 50%;
     transform: translate(-50%);
@@ -95,7 +95,7 @@
     transition: transform 0.3s ease;
 }
 #placedata {
-    position: absolute;
+    position: fixed;
     top: 35%;
     left: 50%;
     transform: translate(-50%);
@@ -104,8 +104,19 @@
     transition: transform 0.3s ease;
     white-space: nowrap;
 }
+
+#place-nick {
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 20px;
+    color: black;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
 #place-text {
-    position: absolute;
+    position: fixed;
     top: 40%;
     left: 5px;
     font-size: 25px;
@@ -146,6 +157,42 @@
 font-family: "Exo 2";
 font-weight: bold;
 }
+#Create_nick {
+    position: fixed;
+    bottom: 10%;
+    font-size: 35px;
+    border: 3px;
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+    background-color: gray;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    text-align: center;
+    height: 5%;
+}
+#input_name {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 30%;
+    border-radius: 15px;
+    width: 70%;
+    height: 5%;
+    font-size: 20px;
+    text-align: center;
+}
+#view_name {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 10%;
+    border-radius: 15px;
+    font-size: 40px;
+    width: 90%;
+    text-align: center;
+}
 .Post {
     position: relative;
     width: 95%;
@@ -156,25 +203,31 @@ font-weight: bold;
     border-color: black;
     border-style: solid;
     border-radius: 15px;
-    height: auto; /* Автоматическая высота в зависимости от содержимого */
+    height: auto; 
     overflow: hidden; 
 }.Post p {
-word-wrap: break-word; /* Разрешить перенос слов */
+word-wrap: break-word;
 font-family: "Zhizn";
 color:white;
 }
 
 .Post-data {
-    position: absolute;
+    position: fixed;
     bottom: -5px;
     right: 5px;
     font-size: 15px;
     
 }.Post-text {
 font-size: 30px;
-
 }
+.Post-nick {
+    position: fixed;
+    top: -5px;
+    right: 5px;
+    font-size: 15px;
 
+    }
+    
 
 
 .g1 {
@@ -187,7 +240,7 @@ font-size: 30px;
     font-size: 20px;
     border-radius: 20px;
     border: 2px;
-    border-color: black;
+    border-color: rgb(107, 107, 107);
     padding: 10px;
     border-style: solid;
 }

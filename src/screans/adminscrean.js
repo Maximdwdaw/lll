@@ -8,7 +8,6 @@ function Admin() {
   const [imgList, setImgList] = useState([]);
   const [placeholder, setplaceholder] = useState('');
   const [fulltext, setfulltext] = useState('');
-  const [imgurl, setimgurl] = useState('');
   const fileInputRef = useRef(null);
   const [ddaw, setd] = useState("../img/photp.png");
   const imageListRef = ref(storage, "images/");
@@ -25,12 +24,15 @@ function Admin() {
     return formattedDate;
   }
   
+  if (!localStorage.nick) {
+    window.location.href = "/settings"
+  }
 
 
   
   function handleUpload() {
     if (img) {
-      alert("Не покидайте сторінки це може бути фатально") // Check if img is not null
+      alert("Не покидайте сторінку це може бути фатально ❗") 
       const imageRef = ref(storage, "images/" + img.name + v4());
       uploadBytes(imageRef, img).then(() => {
         
@@ -45,6 +47,7 @@ function Admin() {
               fulltext: fulltext,
               colortext: color,
               img: url,
+              nick: localStorage.nick,
               
             }
           try { 
@@ -60,7 +63,7 @@ function Admin() {
             if (response.ok) {
               const result = await response.json();
               window.location.href = "/"
-              alert("Стаття завантажена✅")
+              alert("Стаття успішно завантажена ✅")
             } else {
               console.error("Error creating post:", response.status, response.statusText);
             }
@@ -114,7 +117,7 @@ function Admin() {
     <>
       <textarea
         type="text"
-        placeholder="Ведіть весь текст"
+        placeholder="Ведіть текст"
         value={fulltext}
         className="g1"
         onChange={handleInputChange1}

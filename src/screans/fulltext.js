@@ -26,7 +26,7 @@ function view() {
     document.getElementById("place").style.transform = "translate(-50%,100%)"
     document.getElementById("placedata").style.transform = "translate(-50%,100%)"
     document.getElementById("place-text").style.transform = "translate(-500%,0%)"
-
+    document.getElementById("place-nick").style.transform = "translate(-50%,200%)"
 
 
   }
@@ -35,6 +35,7 @@ function view() {
     document.getElementById("place").style.transform = "translate(-50%,0%)"
     document.getElementById("placedata").style.transform = "translate(-50%,0%)"
     document.getElementById("place-text").style.transform = "translate(0%,0%)"
+    document.getElementById("place-nick").style.transform = "translate(-50%,0%)"
     h= false;
     document.getElementById("b1").classList.add("entrys")
 
@@ -47,8 +48,9 @@ function view() {
   return (
     <>
 {localStorage.data && <>
-        <h1 style={{color:data.color}} id='place'>{data.text}</h1>
+        <h1 id='place'>{data.text}</h1>
         <h2 id='placedata'>{data.data}</h2>
+        <h2 id='place-nick'>{data.nick}</h2>
         <p id='place-text'>{data.fulltext}</p>
         <img onClick={view} id='b1' src={data.img} alt="Post" />
   
