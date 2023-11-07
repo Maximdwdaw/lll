@@ -193,6 +193,22 @@ font-weight: bold;
     width: 90%;
     text-align: center;
 }
+
+#g_name {
+    position: fixed;
+    bottom: 0%;
+    font-size: 35px;
+    border: 3px;
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+    left: 50%;
+    transform: translate(-50%);
+    width: 90%;
+    text-align: center;
+    height: 5%;
+}
 .Post {
     position: relative;
     width: 95%;

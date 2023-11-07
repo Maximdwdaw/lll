@@ -28,7 +28,11 @@ function f() {
             onChange={(event) => {setnick(event.target.value);setnick(event.target.value);localStorage.nick = nick}}
             placeholder="Ведіть ваш нік:"
             />}
-
+       <h1
+        id="g_name"
+        onClick={()=>window.location.href = "/"}
+        >Повернутись
+        </h1>
 
         </>
 
