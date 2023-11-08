@@ -7,13 +7,30 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [vis, setvis] = useState(false);
   const [imageLoadCount, setImageLoadCount] = useState(0);
-
+  async function get(url) {                                              
+    try {                                              
+      const response = await fetch(url);                                               
+      if (!response.ok) {                                              
+      console.log(response.status)       
+      throw new Error(response.status)                                       
+      }                                              
+      const data = await response.json();                                              
+      return data;                                               
+    } catch (error) {                                              
+      console.error(error);                                               
+      throw new Error(error);                                               
+    }                                              
+   } 
+  
   useEffect(() => {
     if (!localStorage.nick) {
       window.location.href = "/settings"
-    }
+    }    
 
-    fetch("https://644ab0e4a8370fb32155be44.mockapi.io/item")
+
+
+
+    fetch("https://654a46cae182221f8d52def1.mockapi.io/posts")
       .then((response) => response.json())
       .then((data) => {
         setD(data);
@@ -72,7 +89,7 @@ function Home() {
             fulltext={data.fulltext}
             text={data.text}
             data={data.data}
-            onImageLoad={handleImageLoaded} // Pass the event handler
+            onImageLoad={handleImageLoaded} 
           />
         ))
       )}

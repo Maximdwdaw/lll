@@ -215,7 +215,7 @@ font-weight: bold;
     margin: 5px;
     left: 49%;
     transform: translate(-50%);
-    border: 2px;
+    border: 2px; 
     border-color: black;
     border-style: solid;
     border-radius: 15px;

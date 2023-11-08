@@ -52,7 +52,7 @@ function Admin() {
             }
           try { 
             
-            const response = await fetch("https://644ab0e4a8370fb32155be44.mockapi.io/item", {
+            const response = await fetch("https://654a46cae182221f8d52def1.mockapi.io/posts", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -110,7 +110,6 @@ function Admin() {
   };
   function w(event) {
     color = document.getElementById("colortex").value
-    console.log(color)
   };
 
   return (
